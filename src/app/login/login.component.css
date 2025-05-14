@@ -1,0 +1,157 @@
+body, .login-container {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.login-logo h2,
+.brand-bold,
+.brand-accent,
+.branding h2 {
+  font-family: 'Montserrat', Arial, sans-serif;
+  letter-spacing: 1px;
+}
+
+form,
+.input-group input,
+.login-btn,
+.login-links,
+.tagline {
+  font-family: 'Roboto', Arial, sans-serif;
+}
+
+.login-container {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.login-form-section {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  background: #fff;
+}
+
+.login-logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 32px;
+}
+
+.brand-bold {
+  font-weight: bold;
+  font-style: italic;
+  color: #222;
+}
+
+.brand-accent {
+  color: #1a3764;
+  font-weight: bold;
+}
+
+form {
+  width: 100%;
+  max-width: 350px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.input-group input {
+  width: 100%;
+  padding: 12px 14px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+  background: #f7f7f7;
+}
+
+.login-btn {
+  background: #e87722;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 6px;
+  padding: 12px 0;
+  font-size: 18px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: background 0.2s;
+}
+
+.login-btn:hover {
+  background: #c95d0c;
+}
+
+.login-links {
+  margin-top: 18px;
+  text-align: center;
+  color: #aaa;
+  font-size: 14px;
+}
+
+.login-links a {
+  color: #1a3764;
+  text-decoration: none;
+  margin-bottom: 8px;
+  display: block;
+}
+
+.login-image-section {
+  flex: 1;
+  position: relative;
+  background: linear-gradient(135deg, #e87722 0%, #1a3764 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.hero-image {
+  width: 100%;
+  height: 100vh;
+  object-fit: cover;
+  opacity: 0.5;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.branding {
+  position: relative;
+  z-index: 2;
+  color: #fff;
+  text-align: center;
+}
+
+.tagline {
+  font-size: 1.3rem;
+  font-style: italic;
+  margin-top: 10px;
+  letter-spacing: 2px;
+}
+
+@media (max-width: 900px) {
+  .login-container {
+    flex-direction: column;
+  }
+  .login-image-section, .login-form-section {
+    flex: unset;
+    width: 100%;
+    min-height: 50vh;
+  }
+  .hero-image {
+    height: 50vh;
+  }
+}
+
+.error {
+  color: #e74c3c;
+  font-size: 13px;
+  margin-top: 4px;
+}
