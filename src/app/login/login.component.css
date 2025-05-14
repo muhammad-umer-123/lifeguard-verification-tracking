@@ -21,7 +21,6 @@ form,
 .login-container {
   display: flex;
   height: 100vh;
-  overflow: hidden;
 }
 
 .login-form-section {
@@ -31,7 +30,7 @@ form,
   justify-content: center;
   align-items: center;
   padding: 40px;
-  background: #fff;
+  background: #e0f7fa; /* light teal, ocean foam */
 }
 
 .login-logo {
@@ -44,11 +43,11 @@ form,
 .brand-bold {
   font-weight: bold;
   font-style: italic;
-  color: #222;
+  color: #01579b; /* deep blue */
 }
 
 .brand-accent {
-  color: #1a3764;
+  color: #00838f; /* teal accent */
   font-weight: bold;
 }
 
@@ -63,14 +62,14 @@ form {
 .input-group input {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid #ddd;
+  border: 1px solid #b2ebf2;
   border-radius: 6px;
   font-size: 16px;
-  background: #f7f7f7;
+  background: #f1f8fa;
 }
 
 .login-btn {
-  background: #e87722;
+  background: linear-gradient(90deg, #0288d1 0%, #26c6da 100%); /* ocean blue to teal */
   color: #fff;
   font-weight: bold;
   border: none;
@@ -79,22 +78,24 @@ form {
   font-size: 18px;
   cursor: pointer;
   margin-top: 10px;
+  margin-left: 2rem;
   transition: background 0.2s;
+  box-shadow: 0 2px 8px rgba(2, 136, 209, 0.08);
 }
 
 .login-btn:hover {
-  background: #c95d0c;
+  background: linear-gradient(90deg, #01579b 0%, #00838f 100%);
 }
 
 .login-links {
   margin-top: 18px;
   text-align: center;
-  color: #aaa;
+  color: #4dd0e1;
   font-size: 14px;
 }
 
 .login-links a {
-  color: #1a3764;
+  color: #01579b;
   text-decoration: none;
   margin-bottom: 8px;
   display: block;
@@ -103,7 +104,8 @@ form {
 .login-image-section {
   flex: 1;
   position: relative;
-  background: linear-gradient(135deg, #e87722 0%, #1a3764 100%);
+  background: linear-gradient(135deg, rgba(2,136,209,0.85) 0%, rgba(0,131,143,0.85) 100%);
+  /* Optionally add a background image of ocean waves here */
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -115,7 +117,6 @@ form {
   width: 100%;
   height: 100vh;
   object-fit: cover;
-  opacity: 0.5;
   position: absolute;
   top: 0;
   left: 0;
@@ -134,6 +135,7 @@ form {
   font-style: italic;
   margin-top: 10px;
   letter-spacing: 2px;
+  color: #b2ebf2;
 }
 
 @media (max-width: 900px) {
