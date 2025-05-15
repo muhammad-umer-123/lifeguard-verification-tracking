@@ -21,6 +21,7 @@ form,
 .login-container {
   display: flex;
   height: 100vh;
+  background: #fafdff;
 }
 
 .login-form-section {
@@ -30,7 +31,7 @@ form,
   justify-content: center;
   align-items: center;
   padding: 40px;
-  background: #e0f7fa; /* light teal, ocean foam */
+  background: rgba(182, 240, 230, 0.5); /* subtle seafoam overlay */
 }
 
 .login-logo {
@@ -43,11 +44,11 @@ form,
 .brand-bold {
   font-weight: bold;
   font-style: italic;
-  color: #01579b; /* deep blue */
+  color: #013a63;
 }
 
 .brand-accent {
-  color: #00838f; /* teal accent */
+  color: #2563eb;
   font-weight: bold;
 }
 
@@ -62,14 +63,20 @@ form {
 .input-group input {
   width: 100%;
   padding: 12px 14px;
-  border: 1px solid #b2ebf2;
+  border: 1px solid #b6f0e6;
   border-radius: 6px;
   font-size: 16px;
-  background: #f1f8fa;
+  background: #fafdff;
+  transition: border 0.2s;
+}
+
+.input-group input:focus {
+  border: 1.5px solid #2563eb;
+  outline: none;
 }
 
 .login-btn {
-  background: linear-gradient(90deg, #0288d1 0%, #26c6da 100%); /* ocean blue to teal */
+  background: linear-gradient(90deg, #2563eb 0%, #38bdf8 100%);
   color: #fff;
   font-weight: bold;
   border: none;
@@ -79,23 +86,23 @@ form {
   cursor: pointer;
   margin-top: 10px;
   margin-left: 2rem;
-  transition: background 0.2s;
-  box-shadow: 0 2px 8px rgba(2, 136, 209, 0.08);
+  transition: background 0.2s, box-shadow 0.2s;
+  box-shadow: 0 2px 8px rgba(1, 58, 99, 0.08);
 }
 
 .login-btn:hover {
-  background: linear-gradient(90deg, #01579b 0%, #00838f 100%);
+  background: linear-gradient(90deg, #013a63 0%, #2563eb 100%);
 }
 
 .login-links {
   margin-top: 18px;
   text-align: center;
-  color: #4dd0e1;
+  color: #38bdf8;
   font-size: 14px;
 }
 
 .login-links a {
-  color: #01579b;
+  color: #2563eb;
   text-decoration: none;
   margin-bottom: 8px;
   display: block;
@@ -104,7 +111,7 @@ form {
 .login-image-section {
   flex: 1;
   position: relative;
-  background: linear-gradient(135deg, rgba(2,136,209,0.85) 0%, rgba(0,131,143,0.85) 100%);
+  background: linear-gradient(135deg, rgba(1,58,99,0.92) 0%, rgba(56,189,248,0.7) 100%);
   /* Optionally add a background image of ocean waves here */
   display: flex;
   flex-direction: column;
@@ -135,7 +142,7 @@ form {
   font-style: italic;
   margin-top: 10px;
   letter-spacing: 2px;
-  color: #b2ebf2;
+  color: #b6f0e6;
 }
 
 @media (max-width: 900px) {
