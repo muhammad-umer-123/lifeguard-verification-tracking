@@ -1,7 +1,96 @@
-<div class="container">
-    <div class="row">
-        <div class="col-md-6">
-            <h1>Signup</h1>
-        </div>
+<div class="fullscreen-wrapper">
+    <div class="signup-header">
+      <span class="close-icon">&times;</span>
+      <span class="header-title">MATZILEINU LIFEGUARD VERIFICATION GROUP</span>
     </div>
-</div>
+    <div class="signup-container">
+      <div class="form-center-box">
+        <div id="form-container">
+          <h1 class="lifeguard-title">I'm a Lifeguard</h1>
+          <h2 class="signup-title">Sign Up</h2>
+        </div>
+        <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="signup-form">
+          <div class="field-row two-cols">
+            <div class="field">
+              <label for="firstName" class="form-label">First Name</label>
+              <input type="text" id="firstName" formControlName="firstName" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['firstName'].errors }">
+              <div *ngIf="submitted && f['firstName'].errors" class="invalid-feedback">
+                <div *ngIf="f['firstName'].errors['required']">First name is required</div>
+                <div *ngIf="f['firstName'].errors['minlength']">At least 2 characters</div>
+              </div>
+            </div>
+            <div class="field">
+              <label for="lastName" class="form-label">Last Name</label>
+              <input type="text" id="lastName" formControlName="lastName" class="form-control"
+                [ngClass]="{ 'is-invalid': submitted && f['lastName'].errors }">
+              <div *ngIf="submitted && f['lastName'].errors" class="invalid-feedback">
+                <div *ngIf="f['lastName'].errors['required']">Last name is required</div>
+                <div *ngIf="f['lastName'].errors['minlength']">At least 2 characters</div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="field">
+            <label for="email" class="form-label">Email Address</label>
+            <input type="email" id="email" formControlName="email" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+            <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+              <div *ngIf="f['email'].errors['required']">Email is required</div>
+              <div *ngIf="f['email'].errors['email']">Invalid email address</div>
+            </div>
+          </div>
+  
+          <div class="field">
+            <label for="phoneNumber" class="form-label">Phone Number</label>
+            <input type="text" id="phoneNumber" formControlName="phoneNumber" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['phoneNumber'].errors }">
+            <div *ngIf="submitted && f['phoneNumber'].errors" class="invalid-feedback">
+              <div *ngIf="f['phoneNumber'].errors['required']">Phone number is required</div>
+              <div *ngIf="f['phoneNumber'].errors['pattern']">Invalid phone number</div>
+            </div>
+          </div>
+  
+          <div class="field">
+            <label for="dateOfBirth" class="form-label">Date of Birth</label>
+            <input type="date" id="dateOfBirth" formControlName="dateOfBirth" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['dateOfBirth'].errors }">
+            <div *ngIf="submitted && f['dateOfBirth'].errors" class="invalid-feedback">
+              <div *ngIf="f['dateOfBirth'].errors['required']">Date of birth is required</div>
+            </div>
+          </div>
+  
+          <div class="field">
+            <label for="redCrossCert" class="form-label">Red Cross Certification</label>
+            <input type="file" id="redCrossCert" (change)="onFileChange($event)" class="form-control" accept=".pdf,.jpg,.jpeg,.png">
+            <div *ngIf="submitted && f['redCrossCert'].errors" class="invalid-feedback">
+              <div *ngIf="f['redCrossCert'].errors['required']">Certification file is required</div>
+            </div>
+          </div>
+  
+          <div class="field">
+            <label for="instructor" class="form-label">Instructor</label>
+            <input type="text" id="instructor" formControlName="instructor" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['instructor'].errors }">
+            <div *ngIf="submitted && f['instructor'].errors" class="invalid-feedback">
+              <div *ngIf="f['instructor'].errors['required']">Instructor is required</div>
+            </div>
+          </div>
+  
+          <div class="field">
+            <label for="selectDate" class="form-label">Select Date</label>
+            <input type="date" id="selectDate" formControlName="selectDate" class="form-control"
+              [ngClass]="{ 'is-invalid': submitted && f['selectDate'].errors }">
+            <div *ngIf="submitted && f['selectDate'].errors" class="invalid-feedback">
+              <div *ngIf="f['selectDate'].errors['required']">Date is required</div>
+            </div>
+          </div>
+  
+          <div class="submit-btn-container">
+            <button type="submit" class="request-btn">Request Appointment</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  
