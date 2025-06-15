@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule, ReactiveFormsModule, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { AuthService } from '../services/auth.service';
 
 @Component({
   selector: 'app-signup',
@@ -17,7 +18,9 @@ export class SignupComponent {
 
   constructor(
     private formBuilder: FormBuilder,
-    private router: Router
+    private router: Router,
+    private authService: AuthService
+
   ) {
     this.signupForm = this.formBuilder.group({
       firstName: ['', [Validators.required, Validators.minLength(2)]],
@@ -39,23 +42,30 @@ export class SignupComponent {
       this.signupForm.patchValue({ redCrossCert: file });
     }
   }
-
+  
   onSubmit() {
-    this.submitted = true;
-    if (this.signupForm.valid) {
-      // todo: Implement signup logic here
-      const formData = new FormData();
-      Object.entries(this.signupForm.value).forEach(([key, value]) => {
-        if (key === 'redCrossCert' && this.redCrossCertFile) {
-          formData.append(key, this.redCrossCertFile);
-        } else {
-          formData.append(key, value as string);
-        }
-      });
-      console.log('Form submitted:', this.signupForm.value);
-      // Example: send formData to backend
-    }
+  this.submitted = true;
+  if (this.signupForm.valid) {
+    const formData = new FormData();
+    Object.entries(this.signupForm.value).forEach(([key, value]) => {
+      if (key === 'redCrossCert' && this.redCrossCertFile) {
+        formData.append(key, this.redCrossCertFile);
+      } else {
+        formData.append(key, value as string);
+      }
+    });
+
+    this.authService.registerUser(formData).subscribe({
+      next: (res: any) => {
+        console.log('Registration successful', res);
+        this.router.navigate(['/']);
+      },
+      error: (err: any) => {
+        console.error('Registration failed', err);
+      }
+    });
   }
+}
 
   get f() {
     return this.signupForm.controls;

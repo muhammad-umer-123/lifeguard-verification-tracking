@@ -128,3 +128,93 @@
       gap: 5px;
     }
   }
+  .about-us {
+  max-width: 900px;
+  margin: auto;
+  padding: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+}
+
+.intro {
+  margin-bottom: 30px;
+}
+
+.about-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.video-section {
+  flex: 1;
+  min-width: 250px;
+}
+
+.video-thumbnail {
+  width: 100%;
+  height: 150px;
+  background-color: #d3d3d3;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+}
+
+.play-button {
+  font-size: 2rem;
+}
+
+.video-label {
+  font-weight: bold;
+  margin-top: 8px;
+}
+
+.quote-section {
+  flex: 1;
+  min-width: 250px;
+  padding: 10px;
+}
+
+blockquote {
+  font-style: italic;
+  font-size: 1.1rem;
+  color: #aa0000;
+  margin: 0;
+  position: relative;
+}
+
+.quote-author {
+  margin-top: 10px;
+  font-weight: bold;
+}
+
+.rabbi-photo {
+  margin-top: 10px;
+  width: 80px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.button-group {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+.action-btn {
+  background-color: #c00;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.action-btn:hover {
+  background-color: #900;
+}
